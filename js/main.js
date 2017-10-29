@@ -31,5 +31,10 @@ function calculateCGPA() {
         total_gain = total_gain + (Number(s_credit[i]) * Number(s_gain[i]));
     }
     var result = total_gain / total_credit;
-    alert(result.toFixed(2));
+    //alert(result.toFixed(2));
+    swal({
+        title: "Your CGPA",
+        text: result,
+        imageUrl: 'img/thumbs-up.jpg'
+    });
 }
