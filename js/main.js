@@ -27,8 +27,10 @@ function calculateCGPA() {
     }
     // Calculation With The Value
     for (i = 0; i < num_of_subject; i++) {
-        total_credit = total_credit + Number(s_credit[i]);
-        total_gain = total_gain + (Number(s_credit[i]) * Number(s_gain[i]));
+        if (s_gain[i] != 0) {
+            total_credit = total_credit + Number(s_credit[i]);
+            total_gain = total_gain + (Number(s_credit[i]) * Number(s_gain[i]));
+        }
     }
     var result = total_gain / total_credit;
     //alert(result.toFixed(2));
