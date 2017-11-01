@@ -1,4 +1,21 @@
 var num_of_subject;
+var showUI = document.getElementById("show");
+
+// initially showing the process into the div
+var showMessage = document.getElementById("initialMessage");
+var initialDiaplay = 'To calculate your CGPA just click the Above button and generate hou many subject you have. Then it will ask you to provide the gread you have earn . Then click calculate . And you are good to go. It will calculate your cgpa and prompt your result .';
+var strArray = initialDiaplay.split("");
+
+function animate() {
+    if (strArray.length > 0) {
+        showMessage.innerHTML += strArray.shift();
+    } else {
+        return;
+    }
+    setTimeout(animate, 50);
+}
+animate();
+
 
 function generateinputField() {
     // Taking the number of subject input value
@@ -12,7 +29,7 @@ function generateinputField() {
     }
     template += '</table><div class="form-group inputbutton"><div class="col-sm-offset-5 col-sm-7"><input type="submit" class="btn btn-success" onclick="calculateCGPA()" id="calculate" value="Calculate" data-dismiss="modal"><input class="btn btn-danger" type="reset" name="Reset"></div></div></div></div></div>';
     // Showing The template
-    document.getElementById("show").innerHTML = template;
+    showUI.innerHTML = template;
 }
 // Calculation of CGPA
 function calculateCGPA() {
@@ -36,7 +53,7 @@ function calculateCGPA() {
     //alert(result.toFixed(2));
     swal({
         title: "Your CGPA",
-        text: result,
+        text: result.toFixed(3),
         imageUrl: 'img/thumbs-up.jpg'
     });
 }

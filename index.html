@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>CGPA Calculator | Mortuza Hossain </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -53,11 +53,11 @@
                 <div class="modal-body form-horizontal">
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <input type="number" step="1" min="1" max="100" class="form-control" value="7" id="subject_no">
+                            <input type="number" step="1" min="1" max="40" class="form-control" value="7" id="subject_no">
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-10 col-sm-2">
+                        <div class="col-sm-2">
                             <button id="generate" onclick="generateinputField()" class="btn btn-success" data-dismiss="modal">Generate</button>
                         </div>
                     </div>
@@ -72,28 +72,16 @@
     <!-- Data Input Part -->
 
 
-    <div class="container" id="show"></div>
+    <div class="container" id="show">
+        <div class="content">
+            <span id="initialMessage"></span>
+        </div>
+    </div>
 
-
-    <!-- Including Firebase  -->
-
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyD8qmzbKHkM7IDpdIS5ruUNASUnhKT7R9k",
-            authDomain: "cgpa-fbb94.firebaseapp.com",
-            databaseURL: "https://cgpa-fbb94.firebaseio.com",
-            projectId: "cgpa-fbb94",
-            storageBucket: "",
-            messagingSenderId: "855895297792"
-        };
-        firebase.initializeApp(config);
-    </script>
-
-    <script src="js/jquery-1.12.0.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/jquery-1.12.0.min.js "></script>
+    <script src="js/sweetalert.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/main.js "></script>
 </body>
 
 </html>

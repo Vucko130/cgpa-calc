@@ -70,6 +70,7 @@ input:-webkit-autofill:focus {
 .uni-form-input {
     height: 21px;
     border-radius: 0;
+    text-align: center;
 }
 
 .btn-primary {
@@ -90,7 +91,7 @@ select {
 
 tr.dangerous {
     background: black;
-    color: wheat;
+    color: white;
     font-size: 18px;
 }
 
@@ -98,4 +99,13 @@ p.lead.text-muted {
     font-size: 40px !important;
     color: black;
     margin: 0 0 3px 0px;
+}
+
+.content {
+    background: black;
+    text-align: justify;
+    color: white;
+    padding: 20px 10px;
+    border-radius: 7px;
+    box-shadow: 4px 4px 10px;
 }
