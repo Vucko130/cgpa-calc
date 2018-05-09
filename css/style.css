@@ -74,7 +74,7 @@ input:-webkit-autofill:focus {
 }
 
 .btn-primary {
-    margin-bottom: 30px;
+    margin: 10px 10px 30px 10px;
 }
 
 input.btn.btn-danger {
