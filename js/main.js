@@ -16,8 +16,7 @@ function animate() {
 }
 animate();
 
-
-function generateinputField() {
+function generateinputField1() {
     // Taking the number of subject input value
     num_of_subject = document.getElementById('subject_no').value;
     // Change the value String -> Int
@@ -28,6 +27,21 @@ function generateinputField() {
         template += '<tr><td width="55%">Subject ' + (i + 1) + '</td><td width="20%"><input type="number" step=".1" class="form-control uni-form-input" value="3" id="scredit' + i + '"></td> <td width = "20%" ><select class = "mypickeri selectpicker show-tick" id = "sgain' + i + '" ><option value = "4.0" > A + </option> <option value = "3.75" > A </option> <option value = "3.5" > A - </option> <option value = "3.25" > B + </option> <option value = "3" > B </option> <option value = "2.75" > B - </option> <option value = "2.50" > C + </option> <option value = "2.25" > C </option> <option value = "2.0" > D </option> <option value = "0" > F </option> </select> </td> </tr>';
     }
     template += '</table><div class="form-group inputbutton"><div class="col-sm-offset-5 col-sm-7"><input type="submit" class="btn btn-success" onclick="calculateCGPA()" id="calculate" value="Calculate" data-dismiss="modal"><input class="btn btn-danger" type="reset" name="Reset"></div></div></div></div></div>';
+    // Showing The template
+    showUI.innerHTML = template;
+}
+
+function generateinputField() {
+    // Taking the number of subject input value
+    no_of_year = document.getElementById('subject_no').value;
+    // Change the value String -> Int
+    no_of_year = parseInt(no_of_year);
+    // Generating the template 
+    var template = '<div class="row"><div class="total-subject-input-fields"><div class="col-md-offset-2 col-md-8 input-table form-horizontal"><table class="table table-condensed mytable"><tr class="dangerous "><td width="50 % ">Year</td><td width="25 % " class="text-center">Credit</td><td class="text-center" width="25 % ">Result</td></tr>';
+    for (i = 0; i < no_of_year; i++) {
+        template += '<tr><td width="55%">Semester ' + (i + 1) + '</td><td width="20%"><input type="number" step=".1" class="form-control uni-form-input" value="23" id="yearcredit' + i + '" min = "0"></td> <td width = "20%" ><input type="number" step=".1" class="form-control uni-form-input" value="3" id="yeargain' + i + '" max = "4" min = "0"> </td> </tr>';
+    }
+    template += '</table><div class="form-group inputbutton"><div class="col-sm-offset-5 col-sm-7"><input type="submit" class="btn btn-success" onclick="calculateCGPA1()" id="calculate" value="Calculate" data-dismiss="modal"><input class="btn btn-danger" type="reset" name="Reset"></div></div></div></div></div>';
     // Showing The template
     showUI.innerHTML = template;
 }
@@ -56,4 +70,40 @@ function calculateCGPA() {
         text: result.toFixed(3),
         imageUrl: 'img/thumbs-up.jpg'
     });
+}
+
+function calculateCGPA1() {
+    var total_yeargain = 0;
+    var total_yearcredit = 0;
+
+    // Taking the input from the input field
+    var yearcredit = [];
+    var yeargain = [];
+
+    for (i = 0; i < no_of_year; i++) {
+        yearcredit.push(document.getElementById('yearcredit' + i).value);
+        yeargain.push(document.getElementById('yeargain' + i).value);
+    }
+
+    // Calculate The Value
+    for (i = 0; i < no_of_year; i++) {
+        if (yeargain[i] != 0) {
+            total_yearcredit = total_yearcredit + Number(yearcredit[i]);
+            total_yeargain = total_yeargain + ( Number(yeargain[i]) * Number(yearcredit[i]) );
+        }
+    }
+
+    var result = 0;
+    result = total_yeargain/total_yearcredit;
+
+    // Displaying The Result 
+
+    // alert(result.toFixed(2))
+
+    swal({
+        title: "Your CGPA",
+        text: result.toFixed(3),
+        imageUrl: 'img/thumbs-up.jpg'
+    });
+
 }
