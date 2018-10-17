@@ -33,7 +33,7 @@ function generateinputField1() {
 
 function generateinputField() {
     // Taking the number of subject input value
-    no_of_year = document.getElementById('subject_no').value;
+    no_of_year = document.getElementById('semister_no').value;
     // Change the value String -> Int
     no_of_year = parseInt(no_of_year);
     // Generating the template 
