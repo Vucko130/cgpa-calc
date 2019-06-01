@@ -1,6 +1,10 @@
 /* Base CSS */
 
-@import url('https://fonts.googleapis.com/css?family=Acme');
+body{
+  font-family: 'Acme', sans-serif;
+  height: 100%;
+}
+
 .alignleft {
     float: left;
     margin-right: 15px;
@@ -25,36 +29,15 @@ img {
     height: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2{
     margin: 0 0 15px;
     font-weight: 700;
 }
 
-html,
-body {
-    height: 100%
-}
 
-body {
-    font-family: 'Acme', sans-serif;
-}
 
 a:hover {
     text-decoration: none
-}
-
-
-/* Remove Chrome Input Field's Unwanted Yellow Background Color */
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
 .header {
@@ -77,28 +60,28 @@ input:-webkit-autofill:focus {
     margin: 10px 10px 30px 10px;
 }
 
-input.btn.btn-danger {
+.btn-danger {
     margin-left: 15px;
 }
 
 .swal-overlay {
-    background-color: rgba(43, 165, 137, 0.45);
+    background-color: #2ba589;
 }
 
 select {
     width: 100%;
 }
 
-tr.dangerous {
+.dangerous {
     background: black;
     color: white;
     font-size: 18px;
 }
 
-p.lead.text-muted {
-    font-size: 40px !important;
+.text-muted {
+    font-size: 40px;
     color: black;
-    margin: 0 0 3px 0px;
+    margin-bottom: 3px;
 }
 
 .content {
