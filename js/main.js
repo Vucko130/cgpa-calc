@@ -3,7 +3,7 @@ var showUI = document.getElementById("show");
 
 // initially showing the process into the div
 var showMessage = document.getElementById("initialMessage");
-var initialDiaplay = 'To calculate your CGPA just click the Above button and generate hou many subject you have. Then it will ask you to provide the gread you have earn . Then click calculate . And you are good to go. It will calculate your cgpa and prompt your result .';
+var initialDiaplay = 'To calculate your CGPA just click the Above button and generate how many subject or semester you have. Then it will ask you to provide the grade and credit you have earn. Then click calculate . And you are good to go. It will calculate your cgpa and prompt your result .';
 var strArray = initialDiaplay.split("");
 
 function animate() {
